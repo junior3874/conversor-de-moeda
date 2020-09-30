@@ -211,12 +211,14 @@ main .contentRight .header-inputToConversion span {
   background-repeat: no-repeat;
 }
 
-main .contentRight input {
+main .contentRight .inputsToConversion input {
   width: 250px;
   height: 40px;
   border: 2px solid rgba(0, 0, 0, 0.3);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 20px;
+  padding: 4.4rem 0;
 }
+[]
 /*# sourceMappingURL=conversor.css.map */

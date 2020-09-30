@@ -22,50 +22,22 @@ fetcheApi().then(coin => {
 }());
 
 function currencyConverter(){
-	fetcheApi().then(coin => {
-		
+	fetcheApi().then(coin => {	
 		const coins = {...coin, BRL:{"code": "BRL", "codein":"BRL", "high": 1}}
-		console.log(coins);
-		inputConvert.value = inputBase.value * coins[selectedConvert.value].high;
+			
+		if(selectedBase.value == 'BRL'){
+			const value = inputBase.value / coins[selectedConvert.value].high;
+			inputConvert.value = value.toLocaleString('pt-br',{style: 'currency', currency: `${selectedConvert.value}`, minimumFractionDigits: 2});
+		}else{
+			const value = (inputBase.value * coins[selectedBase.value].high) / coins[selectedConvert.value].high;
+			inputConvert.value = value.toLocaleString('pt-br',{style: 'currency', currency: `${selectedConvert.value}`, minimumFractionDigits: 2});
+		}
 	})
 }
 
 inputBase.onkeyup = () => {
-	currencyConverter();
+	if(inputBase.value !== '' && selectedBase.value.value !== '' && selectedConvert.value !==  ''){
+		currencyConverter();
+	}
+	
 }
-
-
-
-
-
-
-
-// const inputAtual = "1";
-
-// selectedBase.onchange = () =>{
-// 		inputBase = event.target.value;
-// 		converterValue(apiBase);
-
-// };
-// const inputAtual2 = "2";
-
-// selectedConvert.onchange = (event) =>{
-// 		inputConvert = event.target.value;
-// 		console.log(inputAtual2)
-// };
-
-// inputBase.onkeyup =  () =>{
-// 		if(inputBase !== "" && inputConvert !== "" ){
-// 				converterValue(apiBase);
-// 		}
-// };
-
-// let padrao = 0;
-// function converterValue(api : string){
-// 				fetcheApi(api).then(objectApi => {		
-// 			});
-// 		};
-
-
-
-
