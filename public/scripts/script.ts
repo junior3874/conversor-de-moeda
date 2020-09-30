@@ -3,23 +3,41 @@ const apiBase = `https://economia.awesomeapi.com.br/json/all`
 const selectedBase = document.querySelector("select[name=typeConversionBase]");
 const selectedConvert = document.querySelector("select[name=typeConversionMutacioned]");
 
-const inputBase =  document.querySelector("input[name=input1]")
-const inputConvert =  document.querySelector("input[name=input2]")
+const inputBase = document.querySelector("input[name=input1]")
+const inputConvert = document.querySelector("input[name=input2]")
 
 function fetcheApi(){
 		return fetch(apiBase).then(response => response.json()
  )};
 
-function setCoins(){
-		fetcheApi().then(coin => {
-				const coins = Object.keys(coin);
-				for(let i = 0; i < coins.length; i++){
-						selectedConvert.innerHTML += `<option value="${coins[i]}">${coins[i]}</option>`;
-						selectedBase.innerHTML += `<option value="${coins[i]}">${coins[i]}</option>`		;				
-				}
-		})
-};
-setCoins();
+(function setCoins(){
+fetcheApi().then(coin => {
+		
+		const coins = Object.keys({...coin, BRL:{}});
+		for(let i = 0; i < coins.length; i++){
+				selectedConvert.innerHTML += `<option value="${coins[i]}">${coins[i]}</option>`;
+				selectedBase.innerHTML += `<option value="${coins[i]}">${coins[i]}</option>`			
+		}
+	})
+}());
+
+function currencyConverter(){
+	fetcheApi().then(coin => {
+		
+		const coins = {...coin, BRL:{"code": "BRL", "codein":"BRL", "high": 1}}
+		console.log(coins);
+		inputConvert.value = inputBase.value * coins[selectedConvert.value].high;
+	})
+}
+
+inputBase.onkeyup = () => {
+	currencyConverter();
+}
+
+
+
+
+
 
 
 // const inputAtual = "1";
