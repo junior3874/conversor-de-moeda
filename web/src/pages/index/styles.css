@@ -1,0 +1,80 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.content header {
+    width: 90vw;
+    height: auto;
+    height: 10vh;
+    
+}
+.content header h1{
+    font-size: 3.4rem;
+    margin-bottom: 2.4rem;
+}
+
+.content .convert-area{
+    background-color: beige;
+    width: 90vw;
+    height: 70vh;
+
+}
+.content .convert-area .input-block label{
+    font-size: 2.4rem;
+}
+.content .convert-area .input-block input{
+    width: 100%;
+    height: 3.8rem;
+    padding: 0 1rem;
+}
+.content .convert-area button{
+    margin: 1rem 0;
+    height: 3.8rem;
+    width: 100%;
+    background-color: cadetblue;
+}
+.content .convert-area .select-block{
+    font-size: 2.4rem;
+}
+.content .convert-area .select-block select{
+    width: 100%;
+    height: 3.8rem;
+}
+.content .result-conversion h1{
+    font-size: 3.4rem;
+}
+.content .result-conversion .result-conversion-block{
+    width: 80vw;
+    background-color: cornflowerblue;
+    margin: 0 auto;
+    margin-top: 2rem;    
+}
+.content .result-conversion .result-conversion-block p {
+    font-size: 1.8rem;;
+}
+
+@media (min-width: 650px){
+    .content .convert-area{
+        display:flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: flex-start;
+    }
+
+    .content .convert-area .input-block, .content .convert-area .select-block {
+        display:flex;
+        flex-direction: column;
+    }
+    .content .convert-area .input-block input{
+        width: 48rem;
+    }
+    .content .convert-area .select-block select{
+        width: 48rem;
+    }
+    .content .convert-area button{
+        width: 48rem;
+    }
+}
