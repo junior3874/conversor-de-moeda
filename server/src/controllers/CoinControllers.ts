@@ -8,9 +8,11 @@ const api = axios.create({
 
 export default class CoinControllers{
 	async index(req : Request, res: Response){
-		api.get('').then(coins => {			
-		 	const coins2 = coins.data;
-		 	 return res.json({...coins2, BRL:{"code": "BRL", "codein":"BRL", "high": 1}});		
+		api.get('').then(coin => {				
+			 const coins = {...coin.data, BRL:{"code": "BRL", "codein":"BRL", "high": 1, "name": "Real"}}
+			 const array = Object.values(coins)
+			 console.log(array);
+		 	 return res.json(array);		
 		})
 	}
 };
