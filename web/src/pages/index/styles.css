@@ -1,80 +1,95 @@
-.content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fdfffc;
+  background-color: #001427;
+  width: 100vw;
+  height: 100vh;
 }
 .content header {
-    width: 90vw;
-    height: auto;
-    height: 10vh;
-    
+  width: 90vw;
+  height: auto;
+  height: 10vh;
 }
-.content header h1{
-    font-size: 3.4rem;
-    margin-bottom: 2.4rem;
+.content header h1 {
+  font-size: 3.4rem;
+  margin-bottom: 2.4rem;
 }
 
-.content .convert-area{
-    background-color: beige;
-    width: 90vw;
-    height: 70vh;
-
+.content .convert-area {
+  width: 90%;
+  height: 70vh;
 }
-.content .convert-area .input-block label{
-    font-size: 2.4rem;
+.content .convert-area .input-block {
+  display: flex;
+  flex-direction: column;
 }
-.content .convert-area .input-block input{
-    width: 100%;
-    height: 3.8rem;
-    padding: 0 1rem;
+.content .convert-area .input-block label {
+  font-size: 2.4rem;
 }
-.content .convert-area button{
-    margin: 1rem 0;
-    height: 3.8rem;
-    width: 100%;
-    background-color: cadetblue;
+.content .convert-area .input-block input {
+  width: 80%;
+  height: 3.8rem;
+  padding: 0 1rem;
+  background-color: #f4d58d;
 }
-.content .convert-area .select-block{
-    font-size: 2.4rem;
+.content .convert-area button {
+  margin: 1rem 0;
+  height: 3.8rem;
+  width: 100%;
+  background-color: #8d0801;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 2.4rem;
+  cursor: pointer;
 }
-.content .convert-area .select-block select{
-    width: 100%;
-    height: 3.8rem;
+.content .convert-area .select-block {
+  font-size: 2.4rem;
+  display: flex;
+  flex-direction: column;
 }
-.content .result-conversion h1{
-    font-size: 3.4rem;
+.content .convert-area .select-block select {
+  width: 80%;
+  height: 3.8rem;
+  background-color: #f4d58d;
 }
-.content .result-conversion .result-conversion-block{
-    width: 80vw;
-    background-color: cornflowerblue;
-    margin: 0 auto;
-    margin-top: 2rem;    
+.content .result-conversion h1 {
+  font-size: 3.4rem;
+}
+.content .result-conversion .result-conversion-block {
+  width: 80vw;
+  background-color: #bf0603;
+  margin: 0 auto;
+  margin-top: 2rem;
 }
 .content .result-conversion .result-conversion-block p {
-    font-size: 1.8rem;;
+  font-size: 1.8rem;
 }
 
-@media (min-width: 650px){
-    .content .convert-area{
-        display:flex;
-        flex-direction: column;
-        justify-content: end;
-        align-items: flex-start;
-    }
+@media (min-width: 650px) {
+  .content .convert-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+  }
 
-    .content .convert-area .input-block, .content .convert-area .select-block {
-        display:flex;
-        flex-direction: column;
-    }
-    .content .convert-area .input-block input{
-        width: 48rem;
-    }
-    .content .convert-area .select-block select{
-        width: 48rem;
-    }
-    .content .convert-area button{
-        width: 48rem;
-    }
+  .content .convert-area .input-block,
+  .content .convert-area .select-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .content .convert-area .input-block input {
+    width: 48rem;
+  }
+  .content .convert-area .select-block select {
+    width: 48rem;
+  }
+  .content .convert-area button {
+    width: 48rem;
+  }
 }
